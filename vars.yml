@@ -1,0 +1,4 @@
+---
+
+kubernetes_master_ip: "172.16.66.2"
+kubeadm_token:        "wmr81.4xtee99ghs1981xd"

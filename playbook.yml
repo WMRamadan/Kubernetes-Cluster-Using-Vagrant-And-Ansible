@@ -4,10 +4,10 @@
   roles:
     - kubernetes-common
 
-- hosts: kube-master
+- hosts: kubernetes-master
   roles:
     - kubernetes-master
 
-- hosts: kube-nodes
+- hosts: kubernetes-nodes
   roles:
     - kubernetes-nodes

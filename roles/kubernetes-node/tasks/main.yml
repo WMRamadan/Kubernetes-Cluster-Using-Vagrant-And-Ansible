@@ -1,0 +1,9 @@
+---
+- name: swap - disable swap
+  command: swapoff --all
+  become: yes
+
+- name:      Join Kubernetes Cluster
+  ignore_errors: yes
+  become:    true
+  shell:     kubeadm join --token={{ kubeadm_token }} {{ kubernetes_master_ip }}:6443

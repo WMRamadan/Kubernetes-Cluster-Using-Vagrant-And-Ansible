@@ -2,12 +2,12 @@
 
 - hosts: all-nodes
   roles:
-    - kubernetes-common
+    - kubernetes
 
 - hosts: kubernetes-master
   roles:
     - kubernetes-master
 
-- hosts: kubernetes-nodes
+- hosts: kubernetes-node
   roles:
-    - kubernetes-nodes
+    - kubernetes-node

@@ -5,5 +5,5 @@
 [kubernetes-master]
 172.16.66.2 ansible_user=vagrant ansible_ssh_pass=vagrant
 
-[kubernetes-nodes]
+[kubernetes-node]
 172.16.66.3 ansible_user=vagrant ansible_ssh_pass=vagrant

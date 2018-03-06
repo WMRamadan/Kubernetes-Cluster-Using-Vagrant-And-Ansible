@@ -1,0 +1,26 @@
+---
+
+- name:    Initialise Kubernetes Cluster
+  ignore_errors: yes
+  become:  true
+  shell:   kubeadm init --token="{{ kubeadm_token }}" --apiserver-advertise-address="{{ inventory_hostname }}" --pod-network-cidr=172.16.66.0/16
+
+- name:    Copy Kubernetes Config
+  ignore_errors: yes
+  become:  true
+  shell: mkdir /home/vagrant/.kube
+
+- name:    Copy Kubernetes Config
+  ignore_errors: yes
+  become:  true
+  shell: cp /etc/kubernetes/admin.conf /home/vagrant/.kube/config
+
+- name:    Assign Kubernetes config permissions
+  ignore_errors: yes
+  become:  true
+  shell: chown vagrant /home/vagrant/.kube/config
+
+- name:    Download Website
+  ignore_errors: yes
+  become:  true
+  shell: kubectl apply -f https://docs.projectcalico.org/v2.6/getting-started/kubernetes/installation/hosted/kubeadm/1.6/calico.yaml
